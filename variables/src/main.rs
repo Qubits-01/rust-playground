@@ -1,4 +1,4 @@
-use std::{f32::consts::E, io};
+use std::io;
 
 fn main() {
     let mut x: i32 = 5;
@@ -26,7 +26,7 @@ fn main() {
     // let mut spaces = "    ";
     // spaces = spaces.len();
 
-    let _x = 2.0; // f64
+    let _x: f64 = 2.0; // f64
     let _y: f32 = 3.0; // f32
 
     // addition
@@ -34,24 +34,24 @@ fn main() {
     println!("The value of sum is: {sum}");
 
     // subtraction
-    let difference = 95.5 - 4.3;
+    let difference: f64 = 95.5 - 4.3;
     println!("The value of difference is: {difference}");
 
     // multiplication
-    let product = 4 * 30;
+    let product: i32 = 4 * 30;
     println!("The value of product is: {product}");
 
     // division
-    let quotient = 56.7 / 32.2;
+    let quotient: f64 = 56.7 / 32.2;
     println!("The value of quotient is: {quotient}");
-    let truncated_quotient = -5 / 3;
+    let truncated_quotient: i32 = -5 / 3;
     println!("The value of truncated_quotient is: {truncated_quotient}");
 
     // remainder
-    let remainder = 43 % 5;
+    let remainder: i32 = 43 % 5;
     println!("The value of remainder is: {remainder}");
 
-    let t = true;
+    let t: bool = true;
     println!("The value of t is: {t}");
     let f: bool = false; // with explicit type annotation
     println!("The value of f is: {f}");
@@ -69,7 +69,7 @@ fn main() {
     println!("The value of x, y, z is: {x}, {y}, {z}");
     let five_hundred: i32 = tup.0;
     println!("The value of five_hundred is: {five_hundred}");
-    let unit = ();
+    let unit: () = ();
     println!("The value of unit is: {:#?}", unit);
 
     let a: [i32; 5] = [1, 2, 3, 4, 5];
