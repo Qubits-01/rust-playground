@@ -6,4 +6,5 @@ edition = "2021"
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
 [dependencies]
+# [ GENERATING A SECRET NUMBER -> USING A CRATE TO GET MORE FUNCTIONALITY ]
 rand = "0.8.5"
