@@ -1,4 +1,5 @@
 fn main() {
+    // [ VARIABLE SCOPE ]
     let s: &str = "Hello";
 
     {
@@ -11,10 +12,12 @@ fn main() {
 
     println!("{s}");
 
+    // [ THE STRING TYPE ]
     let mut s: String = String::from("hello");
     s.push_str(", world!");
     println!("{s}");
 
+    // [ MEMORY AND ALLOCATION ]
     {
         let _s: String = String::from("hello"); // s is valid from this point forward
 
@@ -22,6 +25,7 @@ fn main() {
     } // this scope is now over, and s is no
       // longer valid
 
+    // [ VARIABLES AND DATA INTERACTING WITH MOVE ]
     let x: i32 = 5;
     let _y: i32 = x;
 
@@ -30,14 +34,17 @@ fn main() {
 
     // println!("{s1}");
 
+    // [ VARIABLE S AND DATA INTERACTING WITH CLONE ]
     let s1: String = String::from("hello");
     let s2: String = s1.clone();
     println!("{s1} {s2}");
 
+    // [ STACK-ONLY DATA: COPY ]
     let x: i32 = 5;
     let y: i32 = x;
     println!("{x} {y}");
 
+    // [ OWNERSHIP AND FUNCTIONS ]
     let s: String = String::from("hello"); // s comes into scope
     takes_ownership(s); // s's value moves into the function...
                         // ... and so is no longer valid here
@@ -49,6 +56,7 @@ fn main() {
                    // but i32 is Copy, so it's okay to still
                    // use x afterward
 
+    // [ RETURN VALUES AND SCOPE ]
     let _s1: String = gives_ownership(); // gives_ownership moves its return
                                          // value into s1
     let s2: String = String::from("hello"); // s2 comes into scope
@@ -59,12 +67,15 @@ fn main() {
     let s1: String = String::from("hello");
     let (s2, len) = calculate_length(s1);
     println!("The length of '{s2}' is {len}.");
-} // Here, x goes out of scope, then s. But because s's value was moved, nothing
+} // [ OWNERSHIP AND FUNCTIONS ]
+  // Here, x goes out of scope, then s. But because s's value was moved, nothing
   // special happens.
 
+// [ RETURN VALUES AND SCOPE ]
 // Here, s3 goes out of scope and is dropped. s2 was moved, so nothing
 // happens. s1 goes out of scope and is dropped.
 
+// [ OWNERSHIP AND FUNCTIONS ]
 fn takes_ownership(some_string: String) {
     // some_string comes into scope
     println!("{}", some_string);
@@ -76,6 +87,7 @@ fn makes_copy(some_integer: i32) {
     println!("{}", some_integer);
 } // Here, some_integer goes out of scope. Nothing special happens.
 
+// [ RETURN VALUES AND SCOPE ]
 fn gives_ownership() -> String {
     // gives_ownership will move its
     // return value into the function
