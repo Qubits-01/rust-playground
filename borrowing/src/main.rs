@@ -6,6 +6,7 @@ fn main() {
     // let s: String = String::from("hello");
     // change(&s);
 
+    // [ MUTABLE REFERENCES ]
     let mut s: String = String::from("hello");
     change(&mut s);
     println!("{s}");
@@ -37,7 +38,7 @@ fn main() {
     let r3 = &mut s; // no problem
     println!("{r3}");
 
-    // Dangling References
+    // [ DANGLING REFERENCES ]
     // let reference_to_nothing: &String = dangle();
     println!("{}", no_dangle());
 }
@@ -52,10 +53,12 @@ fn calculate_length(s: &String) -> usize {
 //     some_string.push_str(", world!");
 // }
 
+// [ MUTABLE REFERENCES ]
 fn change(some_string: &mut String) {
     some_string.push_str(", world!");
 }
 
+// [ DANGLING REFERENCES ]
 // fn dangle() -> &String {
 //     // dangle returns a reference to a String
 
