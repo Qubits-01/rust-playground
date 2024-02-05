@@ -1,12 +1,14 @@
 fn main() {
     let number: i32 = 3;
 
+    // [ IF EXPRESSIONS ]
     if number < 5 {
         println!("condition was true");
     } else {
         println!("condition was false");
     }
 
+    // [ HANDLING MULTIPLE CONDITIONS WITH else IF ]
     if number % 4 == 0 {
         println!("number is divisible by 4");
     } else if number % 3 == 0 {
@@ -17,15 +19,18 @@ fn main() {
         println!("number is not divisible by 4, 3, or 2");
     }
 
+    // [ USING IF IN A LET STATEMENT ]
     let condition: bool = true;
     let number: i32 = if condition { 5 } else { 6 };
     println!("The value of number is: {number}");
 
+    // [ REPETITION WITH LOOPS ]
     loop {
         println!("again!");
         break;
     }
 
+    // [ RETURNING VALUES FROM LOOPS ]
     let mut counter: i32 = 0;
 
     let result: i32 = loop {
@@ -38,6 +43,7 @@ fn main() {
 
     println!("The result is {result}");
 
+    // [ LOOP LABELS TO DISAMBIGUATE BETWEEN MULTIPLE LOOPS ]
     let mut count: i32 = 0;
 
     'counting_up: loop {
@@ -64,6 +70,7 @@ fn main() {
 
     println!("End count = {count}");
 
+    // [ CONDITIONAL LOOPS WITH while ]
     let mut number: i32 = 3;
 
     while number != 0 {
